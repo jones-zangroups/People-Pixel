@@ -8,7 +8,7 @@ import './styles.css';
 import { FaCheckSquare, FaBell, FaMoneyBillWave, FaPlusCircle, FaChevronLeft } from 'react-icons/fa';
 import Calendar from 'react-calendar';
 import {format} from 'date-fns';
-
+import example from './example.jpg'; 
 
 
   const IndividualContact = () => {
@@ -18,6 +18,16 @@ import {format} from 'date-fns';
   const avatar = params.get('avatar');
   const phone = params.get('phone');
   const email = params.get('email');
+  const profile = params.get('profile');
+  //profile= profile.replace('C:\\fakepath\\',"");
+ //var encodedBase64Input=profile.replace('.', '+')
+ var profile1=profile.replace('.', '+').replace('_', '/').replace('-', '=').replace(/\s/g, "+");
+//  var encodedBase64Input=profile1.replace('_', '/')
+//  var encodedBase64Input1=encodedBase64Input.replace('-', '=');
+//  var encodedBase64Input2=encodedBase64Input1.replace(' ', '+');
+//  var encodedBase64Input3=encodedBase64Input2.replace(' ', '+');
+//  var encodedBase64Input4=encodedBase64Input3.replace(' ', '+');
+ console.log(profile1);
   const contactId = params.get('contactId');
 
 
@@ -393,12 +403,21 @@ return (
 
 
     <div className="contact-summary">
+    
       <div className="contact-photo">
-        <img src={avatar || '/default-avatar.jpg'} alt={`${name}'s avatar`} />
+      <img src={profile1 || example} alt={`${avatar}`}  />
+
+     
+      
+      {/* <img src={example} alt={`${name}'s profile`} /> */}
+      {/* <img src='D://images/test2.jpg' alt={`${name}'s profile`} /> */}
+      
+      {/* <img src="https://www.w3schools.com/images/picture.jpg" alt="Mountain"/> */}
+     
       </div>
       <h2>{name || "Contact"}</h2>
-      <h3>{phone || "phone"}</h3>
-      <h3>{email || "Contact"}</h3>
+      <h3>Contact Num:{phone || "phone"}</h3>
+      <h3>Email:{email || "Contact"}</h3>
     </div>
 
     <div className="tab-bar">

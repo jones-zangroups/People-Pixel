@@ -9,6 +9,7 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import './styles.css';
+import logo from './logo.png'; 
 
 function Home() {
   const [categories, setCategories] = useState([]);
@@ -45,11 +46,11 @@ function Home() {
   return (
     <>
       <header className="header">
-        <div className="logo">PeoplePixel</div>
-        <input type="text" placeholder="Search..." className="search-bar" />
-        <div className="profile-icon">
-          <i className="bi bi-person-circle"></i>
+        <div className="logo">
+        <img src={logo} alt="PeoplePixel Logo" />
         </div>
+        <input type="text" placeholder="Search..." className="search-bar" />
+       
       </header>
       <div className="container">
         {categories.map((category, index) => (
