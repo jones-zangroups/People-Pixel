@@ -49,21 +49,6 @@ const Contacts = () => {
   };
 
 
-  // const handleImageChange = (e) => {
-  //   const file = e.target.files[0];
-  //   if (file) {
-  //     const reader = new FileReader();
-  //     reader.onloadend = () => {
-  //       setNewContact({
-  //         ...newContact,
-  //         profile: reader.result,  // base64 string
-  //       });
-  //     };
-  //     reader.readAsDataURL(file);
-  //   }
-  // };
-
-
 // Function to convert file to Base64 format
 const handleFileToBase64Conversion = (file) => {
   return new Promise((resolve, reject) => {
